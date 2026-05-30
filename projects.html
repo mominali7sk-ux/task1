@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects by Momin Ali Shaik – Frontend and Python development projects built during internships and self-learning." />
+  <meta name="author" content="Momin Ali Shaik" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Projects | Momin Ali Shaik" />
+  <meta property="og:description" content="Frontend and Python projects by Momin Ali Shaik, B.Tech CSE Student at SRM University AP." />
+  <meta property="og:type" content="website" />
+  <title>Projects | Momin Ali Shaik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --border: #1e1e2e;
+      --accent: #7c6aff; --accent2: #ff6a9e; --text: #e8e8f0; --muted: #7070a0;
+      --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.7; }
+    .skip-link { position: absolute; top: -100%; left: 1rem; background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 8px 8px; font-family: var(--font-display); font-weight: 700; text-decoration: none; z-index: 9999; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 600 !important; }
+    main { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .page-desc { color: var(--muted); max-width: 500px; margin-bottom: 3rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    article.project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.25s; position: relative; overflow: hidden; }
+    article.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.2s; }
+    article.project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(124,106,255,0.1); }
+    article.project-card:hover::before { opacity: 1; }
+    .project-tag { display: inline-block; background: rgba(124,106,255,0.15); color: var(--accent); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; }
+    h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .project-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .tech-pill { background: var(--bg); border: 1px solid var(--border); border-radius: 100px; padding: 0.2rem 0.65rem; font-size: 0.75rem; color: var(--muted); }
+    .project-link { color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .project-link:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 2.5rem 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 768px) { nav { padding: 1rem; } .nav-links { display: none; } main { padding: 3rem 1rem; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Momin Ali Shaik - Home">M<span>.</span>Ali</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <p class="section-label" aria-hidden="true">My Work</p>
+    <h1>Projects</h1>
+    <p class="page-desc">A collection of projects I've built while learning frontend development and Python. Each one taught me something new.</p>
+
+    <section aria-label="Project list">
+      <ul class="projects-grid" role="list" style="list-style:none; padding:0;">
+
+        <li role="listitem">
+          <article class="project-card" aria-labelledby="proj1-title">
+            <span class="project-tag">Frontend</span>
+            <h2 id="proj1-title">Personal Portfolio Website</h2>
+            <p class="project-desc">A fully accessible, semantic HTML5 portfolio website built during the Thiranex internship. Scores 100 on Lighthouse Accessibility & SEO.</p>
+            <ul class="project-techs" aria-label="Technologies used" role="list">
+              <li class="tech-pill" role="listitem">HTML5</li>
+              <li class="tech-pill" role="listitem">CSS3</li>
+              <li class="tech-pill" role="listitem">ARIA</li>
+              <li class="tech-pill" role="listitem">SEO</li>
+            </ul>
+            <a href="index.html" class="project-link" aria-label="View Portfolio Website project">View Project →</a>
+          </article>
+        </li>
+
+        <li role="listitem">
+          <article class="project-card" aria-labelledby="proj2-title">
+            <span class="project-tag">Data Analytics</span>
+            <h2 id="proj2-title">TATA GenAI Data Analytics</h2>
+            <p class="project-desc">Completed the TATA GenAI Powered Data Analytics Job Simulation by Forage — covering exploratory data analysis, AI-powered predictions, and collections strategy.</p>
+            <ul class="project-techs" aria-label="Technologies used" role="list">
+              <li class="tech-pill" role="listitem">Python</li>
+              <li class="tech-pill" role="listitem">GenAI</li>
+              <li class="tech-pill" role="listitem">Data Analysis</li>
+            </ul>
+            <a href="https://www.theforage.com" class="project-link" aria-label="View Forage simulation certificate" target="_blank" rel="noopener noreferrer">View Certificate →</a>
+          </article>
+        </li>
+
+        <li role="listitem">
+          <article class="project-card" aria-labelledby="proj3-title">
+            <span class="project-tag">Frontend</span>
+            <h2 id="proj3-title">Responsive CSS3 Layouts</h2>
+            <p class="project-desc">Advanced CSS3 layouts using Flexbox and Grid — built as Task 2 of the Thiranex Frontend internship. Fully responsive across all devices.</p>
+            <ul class="project-techs" aria-label="Technologies used" role="list">
+              <li class="tech-pill" role="listitem">CSS3</li>
+              <li class="tech-pill" role="listitem">Flexbox</li>
+              <li class="tech-pill" role="listitem">Grid</li>
+              <li class="tech-pill" role="listitem">Responsive</li>
+            </ul>
+            <a href="contact.html" class="project-link" aria-label="Contact me about this project">Learn More →</a>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 <a href="index.html">Momin Ali Shaik</a> · <a href="contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>

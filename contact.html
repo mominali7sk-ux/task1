@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Momin Ali Shaik – B.Tech CSE Student and Frontend Developer at SRM University AP. Open to internship opportunities." />
+  <meta name="author" content="Momin Ali Shaik" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Contact | Momin Ali Shaik" />
+  <meta property="og:type" content="website" />
+  <title>Contact | Momin Ali Shaik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --border: #1e1e2e;
+      --accent: #7c6aff; --accent2: #ff6a9e; --text: #e8e8f0; --muted: #7070a0;
+      --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.7; min-height: 100vh; }
+    .skip-link { position: absolute; top: -100%; left: 1rem; background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 0 0 8px 8px; font-family: var(--font-display); font-weight: 700; text-decoration: none; z-index: 9999; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 600 !important; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .page-desc { color: var(--muted); max-width: 500px; margin-bottom: 3rem; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; }
+
+    /* LEFT INFO */
+    .contact-info h2 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-info p { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+    .contact-link:hover { color: var(--accent); }
+    .contact-link:last-child { border-bottom: none; }
+    .link-icon { font-size: 1.1rem; width: 24px; text-align: center; flex-shrink: 0; }
+    .link-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); display: block; margin-bottom: 0.1rem; }
+    .link-value { display: block; color: var(--text); }
+
+    /* FORM */
+    .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; }
+    .form-card h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .form-card p { color: var(--muted); font-size: 0.88rem; margin-bottom: 2rem; }
+
+    form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+    .required { color: var(--accent2); margin-left: 2px; }
+
+    input, textarea, select {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.75rem 1rem; color: var(--text); font-family: var(--font-body);
+      font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent); outline: none;
+      box-shadow: 0 0 0 3px rgba(124,106,255,0.15);
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    textarea { resize: vertical; min-height: 130px; }
+    select option { background: var(--surface); }
+
+    /* Error states */
+    input:invalid:not(:placeholder-shown) { border-color: var(--accent2); }
+    .field-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--accent), #9b5de5);
+      color: #fff; padding: 0.9rem 2rem; border-radius: 8px; border: none;
+      font-family: var(--font-display); font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,255,0.3); }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* Success message (hidden by default) */
+    .success-msg {
+      display: none; background: rgba(76,255,145,0.1); border: 1px solid rgba(76,255,145,0.3);
+      border-radius: 8px; padding: 1rem 1.25rem; color: #4cff91; font-size: 0.9rem;
+    }
+    .success-msg.show { display: block; }
+
+    footer { text-align: center; padding: 2.5rem 2rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 4rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem; } .nav-links { display: none; }
+      main { padding: 3rem 1rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Momin Ali Shaik - Home">M<span>.</span>Ali</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <p class="section-label" aria-hidden="true">Say Hello</p>
+    <h1>Get In Touch</h1>
+    <p class="page-desc">Open to internship opportunities, collaborations, and conversations. Fill the form or reach out directly!</p>
+
+    <div class="contact-grid">
+
+      <!-- CONTACT INFO -->
+      <aside aria-label="Contact information">
+        <h2>Contact Details</h2>
+        <p>Reach out through any of these channels — I usually respond within 24 hours.</p>
+        <nav aria-label="Social and contact links">
+          <ul class="contact-links" role="list" style="list-style:none; padding:0;">
+            <li role="listitem">
+              <a href="mailto:mominali@srmap.edu.in" class="contact-link" aria-label="Send email to Momin Ali Shaik">
+                <span class="link-icon" aria-hidden="true">✉️</span>
+                <span>
+                  <span class="link-label">Email</span>
+                  <span class="link-value">mominali@srmap.edu.in</span>
+                </span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="https://linkedin.com/in/mominalishaik" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Momin Ali Shaik's LinkedIn profile (opens in new tab)">
+                <span class="link-icon" aria-hidden="true">💼</span>
+                <span>
+                  <span class="link-label">LinkedIn</span>
+                  <span class="link-value">Momin Ali Shaik</span>
+                </span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="https://github.com/mominalishaik" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Visit Momin Ali Shaik's GitHub profile (opens in new tab)">
+                <span class="link-icon" aria-hidden="true">🐙</span>
+                <span>
+                  <span class="link-label">GitHub</span>
+                  <span class="link-value">mominalishaik</span>
+                </span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="index.html#about" class="contact-link" aria-label="View location and university details">
+                <span class="link-icon" aria-hidden="true">📍</span>
+                <span>
+                  <span class="link-label">Location</span>
+                  <span class="link-value">Hyderabad, Telangana, India</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- CONTACT FORM -->
+      <div class="form-card">
+        <h2>Send a Message</h2>
+        <p>All fields marked <span aria-label="required">*</span> are required.</p>
+
+        <!-- Success message -->
+        <div class="success-msg" role="alert" aria-live="polite" id="success-msg">
+          ✅ Message sent successfully! I'll get back to you soon.
+        </div>
+
+        <form
+          id="contact-form"
+          action="#"
+          method="POST"
+          novalidate
+          aria-label="Contact form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">
+                First Name <span class="required" aria-label="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Ravi"
+                autocomplete="given-name"
+                required
+                aria-required="true"
+                aria-describedby="first-name-hint"
+              />
+              <span class="field-hint" id="first-name-hint">Enter your first name</span>
+            </div>
+            <div class="form-group">
+              <label for="last-name">
+                Last Name <span class="required" aria-label="required">*</span>
+              </label>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Kumar"
+                autocomplete="family-name"
+                required
+                aria-required="true"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              Email Address <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ravi@example.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="email-hint"
+            />
+            <span class="field-hint" id="email-hint">I'll reply to this email address</span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span class="required" aria-label="required">*</span></label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              aria-required="true"
+              aria-describedby="subject-hint"
+            >
+              <option value="" disabled selected>Select a topic…</option>
+              <option value="internship">Internship Opportunity</option>
+              <option value="collaboration">Project Collaboration</option>
+              <option value="feedback">Feedback on My Work</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="field-hint" id="subject-hint">Choose the topic that best fits</span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              Message <span class="required" aria-label="required">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Hi Momin, I wanted to reach out about…"
+              required
+              aria-required="true"
+              aria-describedby="message-hint"
+              minlength="20"
+            ></textarea>
+            <span class="field-hint" id="message-hint">Minimum 20 characters</span>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-submit"
+            aria-label="Send your message to Momin Ali Shaik"
+          >
+            Send Message ✉️
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2026 <a href="index.html">Momin Ali Shaik</a> · <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script>
+    // Accessible form submission handler
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        successMsg.classList.add('show');
+        form.reset();
+        successMsg.focus();
+        setTimeout(() => successMsg.classList.remove('show'), 5000);
+      } else {
+        // Find first invalid field and focus it
+        const firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+
+    // Tab navigation enhancement
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && e.target.tagName === 'A') {
+        e.target.click();
+      }
+    });
+  </script>
+</body>
+</html>
